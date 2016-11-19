@@ -1,0 +1,117 @@
+
+	
+	public static float diasEstancia() {
+		Habitaciones H1= new Habitaciones();
+		int diasEstancia=0;
+		int diasEnTotal = 0;
+		int i=0;
+		while(i<H1.todasHabitaciones.size()){
+			System.out.println("¿Cuantos dias se va a alojar?");
+			diasEstancia=entrada.nextInt();
+			//No tengo en cuenta el calendario(Implementarlo mejor con calendario
+			diasEnTotal=H1.todasHabitaciones.get(i).getDia() + diasEstancia;
+			i++;
+		}
+		return diasEnTotal;
+	}
+	public static float precioTotal(){
+		BaseDeDatosClientes BDC= new BaseDeDatosClientes();
+		Habitaciones H1= new Habitaciones();
+		float precioTotal=0;
+		int i=0;
+		while(i<H1.todasHabitaciones.size()){
+			if(H1.todasHabitaciones.get(i).isOcupada()==false){
+				System.out.println("Se puede emitir la factura");
+				if(H1.todasHabitaciones.get(i) instanceof HabitacionSuite){
+					precioTotal=diasEstancia()*HabitacionSuite.getPrecioSuite();
+				}else if(H1.todasHabitaciones.get(i) instanceof HabitacionIndividual){
+					precioTotal=diasEstancia()*HabitacionIndividual.getPrecioIndividual();
+				}else if(H1.todasHabitaciones.get(i) instanceof HabitacionDoble){
+					precioTotal=diasEstancia()*HabitacionDoble.getPrecioHabitacionDoble();
+				}
+			}
+			i++;		
+		}
+		
+		return precioTotal;
+	}
+	public static void desOcuparHabitacion(){
+		Habitaciones H1= new Habitaciones();
+		int i=0;
+		while(i<H1.todasHabitaciones.size()){
+			if(H1.todasHabitaciones.get(i).isOcupada()==true){
+				H1.todasHabitaciones.get(i).setOcupada(false);
+			}
+			i++;
+		}
+		
+	}
+    public static boolean baseDeDatosConClienteCorrectos(){
+    	BaseDeDatosClientes BDC= new BaseDeDatosClientes();
+    	BaseDeDatos BDD= new BaseDeDatos();
+    	boolean correctos= false;
+    	int i=0;
+    	int j=0;
+    	while((i<BDD.BaseDatos.size())||(correctos==true)){
+    		while((j<BDC.BaseDatos.size())||(correctos==true)){
+    			if((BDD.BaseDatos.get(i).DNI==BDC.BaseDatos.get(j).getDNI())&&
+    					(BDD.BaseDatos.get(i).VISA==BDC.BaseDatos.get(j).getVISA())){
+    						correctos=true;
+    						System.out.println("El DNI y la VISA son correctas.");
+    					}else{
+    						correctos=false;
+    					    System.out.println("El DNI o la VISA es incorrecta.");
+    					}	
+    		j++;
+    		}
+    		i++;	
+    		}
+    	
+    	return correctos;
+}
+	public static boolean clienteFumador() {
+		BaseDeDatosClientes BDC= new BaseDeDatosClientes();
+		boolean fumador=true;
+		int i=0;
+		while((i<BDC.BaseDatos.size())||(fumador=true)){
+			if(BDC.BaseDatos.get(i).isFumador()==false){
+				fumador=false;
+				System.out.println("El cliente no es fumador.");
+			}else{
+				System.out.println("El cliente es fumador.");
+			}
+			
+		}
+		
+		return fumador;
+	}
+	public static boolean habitacionFumadores() {
+		Habitaciones H1= new Habitaciones();
+		boolean fumadores=true;
+		int i=0;
+		while((i<H1.todasHabitaciones.size())||(fumadores=true)){
+			if(H1.todasHabitaciones.get(i).isFumadores()==false){
+				fumadores=false;
+				System.out.println("La habitacion es para no fumadores.");
+			}else{
+				System.out.println("La habitacion es para fumadores.");
+			}
+			i++;
+		}
+		return fumadores;
+	}
+	public static boolean habitacionOcupada() {
+		Habitaciones H1= new Habitaciones();
+		boolean Ocupada=true;
+		int i=0;
+		while((i<H1.todasHabitaciones.size())||(Ocupada=true)){
+			if(H1.todasHabitaciones.get(i).isOcupada()==false){
+				Ocupada=false;
+				System.out.println("La habitacion esta libre.");
+			}else{
+				System.out.println("Sigue ocupada.");
+			}
+			i++;
+		}
+		return Ocupada;
+	}
