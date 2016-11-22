@@ -2,14 +2,17 @@ package Principal;
 
 import DatosHotel.*;
 import java.util.Scanner;
+import java.util.Set;
 import java.io.*;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.ListIterator;
+import java.util.Map;
 import java.util.Map.Entry;
 
 import DatosClienteCorrectos.*;
 import java.util.LinkedList;
-public class Principal {
+public class Principal implements java.util.Map<Integer,Habitacion >, java.util.Map.Entry<Integer,Cliente>{
 	
     static Scanner entrada=  new Scanner(System.in);
     
@@ -880,4 +883,94 @@ public class Principal {
         	
 		 }
 }
+
+	@Override
+	public Integer getKey() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Cliente getValue() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Cliente setValue(Cliente value) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int size() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean containsKey(Object key) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean containsValue(Object value) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Habitacion get(Object key) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Habitacion put(Integer key, Habitacion value) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Habitacion remove(Object key) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void putAll(Map<? extends Integer, ? extends Habitacion> m) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void clear() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Set<Integer> keySet() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Collection<Habitacion> values() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<java.util.Map.Entry<Integer, Habitacion>> entrySet() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
