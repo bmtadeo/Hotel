@@ -1,8 +1,9 @@
 package DatosHotel;
 
 import java.util.*;
+import java.util.Map.Entry;
 
-public class Habitacion {
+public class Habitacion{
 	private int dia;
 	private int mes;
 	private int anyo;

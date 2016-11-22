@@ -5,6 +5,7 @@ import java.util.Scanner;
 import java.io.*;
 import java.util.Iterator;
 import java.util.ListIterator;
+import java.util.Map.Entry;
 
 import DatosClienteCorrectos.*;
 import java.util.LinkedList;
@@ -59,7 +60,7 @@ public class Principal {
 	 * Leer menu del programa del hotel
 	 * @return opcion del menu
 	 */
-	public static int leerMenuHotel() {
+	public static int leerMenuHotel(){
 		int opcion = 0;
 		final String MENU = "\n\n1.- Añadir cliente al Hotel\n"
 				+ "2.- Reservar Habitacion\n"
